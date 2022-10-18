@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_sort_int_tab(int *array, int size)
 {

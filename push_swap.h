@@ -9,6 +9,11 @@ typedef struct stack
     int value;
 }	stack;
 
+typedef struct limit
+{
+	int top;
+    int bot;
+}	limit;
 
 void    makelist(char **nbrs, stack *a, stack *b, int size);
 
@@ -19,7 +24,10 @@ void	sort_5(stack *a, stack *b);
 void    a_sort_5(stack *a);           //work on names XD
 void    sortidk(stack *a, int size);
 
-stack    nullstack(stack c);
+stack	nullstack(stack c);
+int		nbr_checker(stack *a, limit lim);
+limit	define_lim(int ac);
+void    push_top(stack *a, limit lim, int ac);
 
 //operations:
 

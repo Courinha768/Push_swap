@@ -6,7 +6,7 @@ void	pa(stack *a, stack *b, int size)
 	stack *na;
 
 	write(1, "pa\n", 3);
-	na = ft_calloc(size, 4);
+	na = ft_calloc(size, sizeof(int));
 	na[0] = b[0];
 	i = -1;
 	while (a[++i].value)
@@ -27,7 +27,7 @@ void	pb(stack *a, stack *b, int size)
 	stack *nb;
 
 	write(1, "pb\n", 3);
-	nb = ft_calloc(size, 4);
+	nb = ft_calloc(size, sizeof(int));
 	nb[0] = a[0];
 	i = -1;
 	while (b[++i].value)
