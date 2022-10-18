@@ -13,6 +13,7 @@ void    sort(int ac, char **av)
     stack   a[ac];
     stack   b[ac];
     limit   lim;
+    int     j = ac;
 
     makelist(av, a, b, ac);
     if (ac == 3)
@@ -30,10 +31,17 @@ void    sort(int ac, char **av)
                 pb(a, b, ac);
             }
         }
+        while (j)
+        {
+            while (b[0].value != j)
+                rb(b, ac);
+            pa(a, b, ac);
+            j--;
+        }
     }
 }
 
-// i = 0;
+// int i = 0;
 // while (i < 80)
 // {
 //     ft_putnbr_fd(b[i].nbr, 1);
