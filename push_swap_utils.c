@@ -23,20 +23,12 @@ limit define_lim(int ac)
     int         chunk_nbr;
     limit       lim;
 
-    if (ac < 200)
+    if (ac < 101)
         chunk_nbr = 5;
     else
-        chunk_nbr = 10;
-    if (!i)
-    {
-        lim.bot = 1;
-        lim.top = (ac / chunk_nbr);
-    }
-    else
-    {
-        lim.bot = ((ac / chunk_nbr) * i) + 1;
-        lim.top = ((ac / chunk_nbr) * (i + 1));
-    }
+        chunk_nbr = 11;
+    lim.bot = ((ac / chunk_nbr) * i) + 1;
+    lim.top = ((ac / chunk_nbr) * (i + 1));
     i++;
     return (lim);
 }
