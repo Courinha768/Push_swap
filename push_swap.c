@@ -8,6 +8,28 @@ int main(int ac, char **av)
     sort(ac, av);
 }
 
+void    push_top_b(stack *b,int wanted, int ac)
+{
+    int i = 0;
+    int j;
+    int b_size = 0;
+
+    while (b[b_size].value)
+        b_size++;
+    if (b[0].value == 0)
+        return ;
+    else
+        while (b[i].value && b[i].value != wanted)
+            i++;
+    j = b_size - i;
+    if (i < j)
+        while (i--)
+            rb(b, ac);
+    else
+        while (j--)
+            rrb(b, ac);
+}
+
 void    sort(int ac, char **av)
 {
     stack   a[ac];
@@ -33,18 +55,20 @@ void    sort(int ac, char **av)
         }
         while (j)
         {
-            while (b[0].value != j)
-                rb(b, ac);
+            push_top_b(b, j, ac);
             pa(a, b, ac);
             j--;
         }
     }
 }
 
+
 // int i = 0;
-// while (i < 80)
+// while (i < 10)
 // {
+//     ft_putnbr_fd(a[i].nbr, 1);
+//     ft_putchar_fd(' ', 1);
 //     ft_putnbr_fd(b[i].nbr, 1);
-//     ft_putchar_fd(10, 1);
+//     ft_putchar_fd('\n', 1);
 //     i++;
 // }

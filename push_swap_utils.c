@@ -24,9 +24,9 @@ limit define_lim(int ac)
     limit       lim;
 
     if (ac < 101)
-        chunk_nbr = 5;
+        chunk_nbr = 6;
     else
-        chunk_nbr = 11;
+        chunk_nbr = 14;
     lim.bot = ((ac / chunk_nbr) * i) + 1;
     lim.top = ((ac / chunk_nbr) * (i + 1));
     i++;
