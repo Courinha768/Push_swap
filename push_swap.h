@@ -3,52 +3,52 @@
 
 # include "libft/libft.h"
 
-typedef struct stack
+typedef struct t_stack
 {
-	int nbr;
-    int value;
-}	stack;
+	int	nbr;
+	int	value;
+}	t_stack;
 
-typedef struct limit
+typedef struct t_limit
 {
-	int top;
-    int bot;
-}	limit;
+	int	top;
+	int	bot;
+}	t_limit;
 
-void    makelist(char **nbrs, stack *a, stack *b, int size);
+void	makelist(char **nbrs, t_stack *a, t_stack *b, int size);
 
-void    sort(int ac, char **av);
+void	sort(int ac, char **av);
 
-void	sort_3(stack *a);
-void	sort_5(stack *a, stack *b);
-void    a_sort_5(stack *a);           //work on names XD
-void    sortidk(stack *a, int size);
+void	sort_3(t_stack *a);
+void	sort_5(t_stack *a, t_stack *b);
+void	a_sort_5(t_stack *a);
+void	sortidk(t_stack *a, int size);
 
-stack	nullstack(stack c);
-int		nbr_checker(stack *a, limit lim);
-limit	define_lim(int ac);
-void    push_top(stack *a, limit lim, int ac);
+t_stack	nullt_stack(t_stack c);
+int		nbr_checker(t_stack *a, t_limit lim);
+t_limit	define_lim(int ac);
+void	push_top(t_stack *a, t_limit lim, int ac);
 
 //operations:
 
-void	ss(stack *a, stack *b);
-void	sa(stack *a);
-void	sb(stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
 
-void	pa(stack *a, stack *b, int size);
-void	pb(stack *a, stack *b, int size);
+void	pa(t_stack *a, t_stack *b, int size);
+void	pb(t_stack *a, t_stack *b, int size);
 
-void	rb(stack *b, int size);
-void	ra(stack *a, int size);
-void	rr(stack *a, stack *b, int size);
+void	rb(t_stack *b, int size);
+void	ra(t_stack *a, int size);
+void	rr(t_stack *a, t_stack *b, int size);
 
-void	rra(stack *a, int size);
-void	rrb(stack *b, int size);
-void	rrr(stack *a, stack *b, int size);
+void	rra(t_stack *a, int size);
+void	rrb(t_stack *b, int size);
+void	rrr(t_stack *a, t_stack *b, int size);
 
 //extra:
 
-void    prints(int *a, int *b);
-void    printst(stack *a, stack *b);
+void	prints(int *a, int *b);
+void	printst(t_stack *a, t_stack *b);
 
 #endif

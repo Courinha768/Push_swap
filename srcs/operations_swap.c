@@ -1,8 +1,8 @@
 #include "../push_swap.h"
 
-void	sa(stack *a)
+void	sa(t_stack *a)
 {
-	stack	swap;
+	t_stack	swap;
 
 	write(1, "sa\n", 3);
 	swap = a[0];
@@ -10,9 +10,9 @@ void	sa(stack *a)
 	a[1] = swap;
 }
 
-void	sb(stack *b)
+void	sb(t_stack *b)
 {
-	stack	swap;
+	t_stack	swap;
 
 	write(1, "sb\n", 3);
 	swap = b[0];
@@ -20,7 +20,7 @@ void	sb(stack *b)
 	b[1] = swap;
 }
 
-void	ss(stack *a, stack *b)
+void	ss(t_stack *a, t_stack *b)
 {
 	sa(a);
 	sb(b);

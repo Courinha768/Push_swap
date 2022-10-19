@@ -1,9 +1,9 @@
 #include "../push_swap.h"
 
-void	rra(stack *a, int size)
+void	rra(t_stack *a, int size)
 {
-	int 	i;
-	stack	last;
+	int		i;
+	t_stack	last;
 
 	write(1, "rra\n", 4);
 	i = size - 1;
@@ -11,15 +11,15 @@ void	rra(stack *a, int size)
 		i--;
 	last = a[i];
 	i += 1;
-	while(--i > 0)
+	while (--i > 0)
 		a[i] = a[i - 1];
 	a[0] = last;
 }
 
-void	rrb(stack *b, int size)
+void	rrb(t_stack *b, int size)
 {
-	int i;
-	stack	last;
+	int		i;
+	t_stack	last;
 
 	write(1, "rrb\n", 4);
 	i = size - 1;
@@ -27,12 +27,12 @@ void	rrb(stack *b, int size)
 		i--;
 	last = b[i];
 	i += 1;
-	while(--i > 0)
+	while (--i > 0)
 		b[i] = b[i - 1];
 	b[0] = last;
 }
 
-void	rrr(stack *a, stack *b, int size)
+void	rrr(t_stack *a, t_stack *b, int size)
 {
 	rra(a, size);
 	rrb(b, size);
