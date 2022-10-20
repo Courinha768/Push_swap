@@ -27,24 +27,13 @@ typedef struct t_limit
 	int	bot;
 }	t_limit;
 
-void	makelist(char **nbrs, t_stack *a, t_stack *b, int size);
-
 void	sort(int ac, char **av);
+int		valid(int ac, char **av);
 
-void	sort_3(t_stack *a);
-void	sort_5(t_stack *a, t_stack *b);
-void	a_sort_5(t_stack *a);
-void	sortidk(t_stack *a, int size);
-
-t_stack	nullt_stack(t_stack c);
 int		nbr_checker(t_stack *a, t_limit lim);
-t_limit	define_lim(int ac);
-void	push_top(t_stack *a, t_limit lim, int ac);
+t_stack	nullt_stack(t_stack c);
 
-int		printerror(void);
-int		inorder(int ac, char **av);
-
-//operations:
+//OPERATIONS:
 
 void	ss(t_stack *a, t_stack *b);
 void	sa(t_stack *a);
@@ -61,9 +50,25 @@ void	rra(t_stack *a, int size);
 void	rrb(t_stack *b, int size);
 void	rrr(t_stack *a, t_stack *b, int size);
 
-//extra:
+//SRCS:
 
-void	prints(int *a, int *b);
-void	printst(t_stack *a, t_stack *b);
+void	ft_sort_int_tab(int *array, int size);
+void	copy_nbrs(t_stack *a, int *array, int size);
+void	makelist(char **nbrs, t_stack *a, t_stack *b, int size);
+
+t_limit	define_lim(int ac);
+void	push_top(t_stack *a, t_limit lim, int ac);
+void	push_top_b(t_stack *b, int wanted, int ac);
+
+void	sortidk(t_stack *a, int size);
+void	sort_3(t_stack *a);
+void	a_sort_5(t_stack *a);
+void	sort_5(t_stack *a, t_stack *b);
+
+void	sort_small(int ac, t_stack *a, t_stack *b);
+void	sort_big(int ac, t_stack *a, t_stack *b);
+
+int		printerror(void);
+int		inorder(int ac, char **av);
 
 #endif
