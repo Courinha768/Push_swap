@@ -8,7 +8,7 @@ This project was an introduction to **sorting algorithms** and **complexity**. O
 
 You have 2 **stacks** named a and b
 
-At the beginning:
+*At the beginning:*
 
 The stack **a** contains a random amount of negative and/or positive numbers which cannot be duplicated.
 
