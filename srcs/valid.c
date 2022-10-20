@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   valid.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aappleto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 18:30:15 by aappleto          #+#    #+#             */
-/*   Updated: 2022/10/20 18:30:16 by aappleto         ###   ########.fr       */
+/*   Created: 2022/10/20 21:40:01 by aappleto          #+#    #+#             */
+/*   Updated: 2022/10/20 21:40:02 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	nullt_stack(t_stack c)
+int	printerror(void)
 {
-	c.nbr = 0;
-	c.value = 0;
-	return (c);
+	write(2, "Error\n", 6);
+	return (0);
 }
 
-int	nbr_checker(t_stack *a, t_limit lim)
+int	inorder(int ac, char **av)
 {
 	int	i;
+	int	*array;
 
+	array = (int *)ft_calloc(sizeof(int), ac + 1);
 	i = -1;
-	while (a[++i].value)
-		if (a[i].value >= lim.bot && a[i].value <= lim.top)
-			return (1);
-	return (0);
+	while (av[++i + 1])
+		array[i] = ft_atoi(av[i + 1]);
+	i = 0;
+	while (array[++i])
+	{
+		if (array[i] < array[i - 1])
+		{
+			free(array);
+			return (0);
+		}
+	}
+	free(array);
+	return (1);
 }

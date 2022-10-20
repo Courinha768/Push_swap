@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aappleto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 18:30:15 by aappleto          #+#    #+#             */
-/*   Updated: 2022/10/20 18:30:16 by aappleto         ###   ########.fr       */
+/*   Created: 2022/10/20 21:40:09 by aappleto          #+#    #+#             */
+/*   Updated: 2022/10/20 21:40:11 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	nullt_stack(t_stack c)
+void	sort_small(int ac, t_stack *a, t_stack *b)
 {
-	c.nbr = 0;
-	c.value = 0;
-	return (c);
+	if (ac == 3)
+		sort_3(a);
+	else if (ac == 5)
+		sort_5(a, b);
 }
 
-int	nbr_checker(t_stack *a, t_limit lim)
+void	sort_big(int ac, t_stack *a, t_stack *b)
 {
-	int	i;
+	t_limit	lim;
+	int		j;
 
-	i = -1;
-	while (a[++i].value)
-		if (a[i].value >= lim.bot && a[i].value <= lim.top)
-			return (1);
-	return (0);
+	j = ac;
+	while (a[0].value)
+	{
+		lim = define_lim(ac);
+		while (nbr_checker(a, lim))
+		{
+			push_top(a, lim, ac);
+			pb(a, b, ac);
+		}
+	}
+	while (j)
+	{
+		push_top_b(b, j, ac);
+		pa(a, b, ac);
+		j--;
+	}
 }

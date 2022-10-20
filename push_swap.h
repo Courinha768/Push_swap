@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/20 18:30:06 by aappleto          #+#    #+#             */
+/*   Updated: 2022/10/20 18:30:08 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -28,6 +40,9 @@ t_stack	nullt_stack(t_stack c);
 int		nbr_checker(t_stack *a, t_limit lim);
 t_limit	define_lim(int ac);
 void	push_top(t_stack *a, t_limit lim, int ac);
+
+int		printerror(void);
+int		inorder(int ac, char **av);
 
 //operations:
 

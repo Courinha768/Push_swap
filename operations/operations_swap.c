@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   operations_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aappleto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 18:30:15 by aappleto          #+#    #+#             */
-/*   Updated: 2022/10/20 18:30:16 by aappleto         ###   ########.fr       */
+/*   Created: 2022/10/20 18:31:14 by aappleto          #+#    #+#             */
+/*   Updated: 2022/10/20 18:31:16 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_stack	nullt_stack(t_stack c)
+void	sa(t_stack *a)
 {
-	c.nbr = 0;
-	c.value = 0;
-	return (c);
+	t_stack	swap;
+
+	write(1, "sa\n", 3);
+	swap = a[0];
+	a[0] = a[1];
+	a[1] = swap;
 }
 
-int	nbr_checker(t_stack *a, t_limit lim)
+void	sb(t_stack *b)
 {
-	int	i;
+	t_stack	swap;
 
-	i = -1;
-	while (a[++i].value)
-		if (a[i].value >= lim.bot && a[i].value <= lim.top)
-			return (1);
-	return (0);
+	write(1, "sb\n", 3);
+	swap = b[0];
+	b[0] = b[1];
+	b[1] = swap;
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	sa(a);
+	sb(b);
 }
