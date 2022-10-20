@@ -29,3 +29,9 @@ int	nbr_checker(t_stack *a, t_limit lim)
 			return (1);
 	return (0);
 }
+
+void	double_ra(t_stack *a)
+{
+	ra(a, 5);
+	ra(a, 5);
+}

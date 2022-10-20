@@ -32,6 +32,7 @@ int		valid(int ac, char **av);
 
 int		nbr_checker(t_stack *a, t_limit lim);
 t_stack	nullt_stack(t_stack c);
+void	double_ra(t_stack *a);
 
 //OPERATIONS:
 
@@ -57,18 +58,22 @@ void	copy_nbrs(t_stack *a, int *array, int size);
 void	makelist(char **nbrs, t_stack *a, t_stack *b, int size);
 
 t_limit	define_lim(int ac);
-void	push_top(t_stack *a, t_limit lim, int ac);
+void	push_top_a(t_stack *a, t_limit lim, int ac);
 void	push_top_b(t_stack *b, int wanted, int ac);
 
-void	sortidk(t_stack *a, int size);
 void	sort_3(t_stack *a);
-void	a_sort_5(t_stack *a);
+void	sort_4(t_stack *a, t_stack *b);
 void	sort_5(t_stack *a, t_stack *b);
+void	sort_5b(t_stack *a);
+void	sort_5final(t_stack *a, int size);
 
 void	sort_small(int ac, t_stack *a, t_stack *b);
 void	sort_big(int ac, t_stack *a, t_stack *b);
 
-int		printerror(void);
+int		print_error(void);
 int		inorder(int ac, char **av);
+int		duplicates(int ac, char **av);
+int		isint(char **av);
+int		cut_str(char *str, int start);
 
 #endif

@@ -28,7 +28,7 @@ t_limit	define_lim(int ac)
 	return (lim);
 }
 
-void	push_top(t_stack *a, t_limit lim, int ac)
+void	push_top_a(t_stack *a, t_limit lim, int ac)
 {
 	int	i;
 	int	j;

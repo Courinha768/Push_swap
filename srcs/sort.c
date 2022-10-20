@@ -14,8 +14,12 @@
 
 void	sort_small(int ac, t_stack *a, t_stack *b)
 {
-	if (ac == 3)
+	if (ac == 2)
+		sa(a);
+	else if (ac == 3)
 		sort_3(a);
+	else if (ac == 4)
+		sort_4(a, b);
 	else if (ac == 5)
 		sort_5(a, b);
 }
@@ -31,7 +35,7 @@ void	sort_big(int ac, t_stack *a, t_stack *b)
 		lim = define_lim(ac);
 		while (nbr_checker(a, lim))
 		{
-			push_top(a, lim, ac);
+			push_top_a(a, lim, ac);
 			pb(a, b, ac);
 		}
 	}
