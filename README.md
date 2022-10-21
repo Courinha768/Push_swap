@@ -29,3 +29,7 @@ The goal is to sort in ascending order numbers into stack a. To do so you have t
 | sa | Swaps the two top numbers of stack a |
 | sb | Swaps the two top numbers of stack b |
 | ss | Equivalent of sa sb |
+
+## GRADE
+
+![plot](./index.jpeg)
