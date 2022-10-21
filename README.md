@@ -32,4 +32,4 @@ The goal is to sort in ascending order numbers into stack a. To do so you have t
 
 ## GRADE
 
-![plot](./index.jpeg)
+![Screenshot](grade.png)
